@@ -30,3 +30,5 @@ Next steps:
 
 Create repo on github for final_project
 
+ansible-playbook -i inventory_webapp.txt -b -u ubuntu webapp.yaml
+docker ps
