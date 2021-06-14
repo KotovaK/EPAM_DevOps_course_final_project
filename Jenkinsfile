@@ -2,20 +2,24 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                // sh 'pytest -v'
+                sh 'env'
             }
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+        // stage('Build_push_docker_image') {
+        //     steps {
+        //         @BUILD_ID
+        //         sh 'docker build -f Dockerfile -t app:BUILD_ID .'
+        //         echo "Build by  Jinkins Build#" @BUILD_ID 
+        //         echo @BUILD_ID
+        //     }
+        // }
+        // stage('Deploy') {
+        //     steps {
+        //         echo 'Deploy....'
+        //     }
+        // }
     }
 }
