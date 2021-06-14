@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Build_docker_image') {
             steps {
-                sh 'docker build -f Dockerfile -t app:$GIT_COMMIT .'
+                sh 'docker build -f Dockerfile -t kotovak/app:$GIT_COMMIT .'
                 
             }
         }
