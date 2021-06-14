@@ -16,7 +16,7 @@ pipeline {
             }
         stage('Push_docker_image') {
             steps {
-                withDockerRegistry(credentialsId: 'dockerhub_cred_jenkins', url 'https://index.docker.io/v1/'){
+                withDockerRegistry(credentialsId: 'dockerhub_cred_jenkins', url: 'https://index.docker.io/v1/'){
                     sh '''
                         docker push kotovak/app:$GIT_COMMIT' 
                    '''
