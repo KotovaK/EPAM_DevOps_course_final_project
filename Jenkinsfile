@@ -5,7 +5,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'pip install -r requirements.txt'
-                sh 'pytest -v'
+                sh '/var/lib/jenkins/.local/bin/pytest -v'
                 
             }
         }
