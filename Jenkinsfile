@@ -18,7 +18,7 @@ pipeline {
             steps {
                 withDockerRegistry(credentialsId: 'dockerhub_cred_jenkins', url 'https://index.docker.io/v1/'){
                     sh '''
-                    docker push kotovak/app:$GIT_COMMIT' 
+                        docker push kotovak/app:$GIT_COMMIT' 
                    '''
                 }    
                 
