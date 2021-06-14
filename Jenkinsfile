@@ -9,10 +9,17 @@ pipeline {
                 
             }
         }
-        stage('Build_push_docker_image') {
+        stage('Build_docker_image') {
             steps {
                 sh 'docker build -f Dockerfile -t app:$GIT_COMMIT .'
-             
+                
+            }
+        stage('Push_docker_image') {
+            steps {
+                withDockerRegistry(credentialsId: 'dockerhub_cred_jenkin', url 'https://index.docker.io/v1/'){
+                    sh 'docker push kotovak/app:$GIT_COMMIT' 
+                }       
+                
             }
         }
         stage('Deploy') {
