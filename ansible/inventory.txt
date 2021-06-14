@@ -1,4 +1,4 @@
 [jenkins]
-ec2-18-194-98-7.eu-central-1.compute.amazonaws.com
+ec2-3-124-191-213.eu-central-1.compute.amazonaws.com
 [webapp]
-ec2-3-127-22-37.eu-central-1.compute.amazonaws.com
+ec2-3-66-120-223.eu-central-1.compute.amazonaws.com
