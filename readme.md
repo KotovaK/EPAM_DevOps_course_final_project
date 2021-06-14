@@ -30,5 +30,9 @@ Next steps:
 
 Create repo on github for final_project
 
-ansible-playbook -i inventory_webapp.txt -b -u ubuntu webapp.yaml
-docker ps
+`terraform plan` & `terraform apply` - create two instances
+`ansible-playbook -i inventory.txt -b -u ubuntu webapp.yaml` - install docker on instance named 'weabapp'
+`docker ps` - check list of running containers
+`ansible-playbook -i inventory.txt -b -u ubuntu jenkins.yaml` - install docker and jenkins on  another instance named 'jenkins'
+
+
