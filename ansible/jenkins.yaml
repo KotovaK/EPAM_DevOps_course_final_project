@@ -60,5 +60,11 @@
   - name: add jenkins to group docker
     shell:
      cmd: usermod -a -G docker jenkins
+    
+  - name: Stop and Start jenkins
+    service:
+      name: jenkins
+      state: restarted
+  
    
   # ---
