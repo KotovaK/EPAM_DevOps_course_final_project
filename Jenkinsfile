@@ -26,9 +26,6 @@ pipeline {
             }
         }
         stage('RunContainer on webapp server') {
-          define {
-            def dockerRun //undefined shared variable
-          }   
             steps {
                 def dockerRun = "docker run -p 8080:8080 -d -name app kotovak/app:$GIT_COMMIT"
                 sshagent(['webapp-server']) {
