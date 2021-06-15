@@ -28,8 +28,10 @@ pipeline {
         stage('RunContainer on webapp server') {
             steps {
                 script {
+                  def dockerStop = "docker rm -f app"
                   def dockerRun = "docker run -p 80:5000 -d --name app kotovak/app:$GIT_COMMIT"
                   sshagent(['webapp-server']) {
+                    sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.5.134 '${dockerStop}'"
                     sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.5.134 '${dockerRun}'"
                   } 
                 } 
