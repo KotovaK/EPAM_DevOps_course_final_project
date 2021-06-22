@@ -21,3 +21,7 @@ jobs:
       - name: run pytest
         run:
           pytest -v
+      
+      - name: build
+        run:     
+          docker build -f Dockerfile -t kotovak/app:1 .
