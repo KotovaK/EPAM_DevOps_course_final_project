@@ -24,4 +24,4 @@ jobs:
       
       - name: build
         run:     
-          docker build -f Dockerfile -t kotovak/app:$CIRCLE_TAG .
+          docker build -f Dockerfile -t kotovak/app:$GIT_COMMIT .
