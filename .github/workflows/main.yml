@@ -25,3 +25,6 @@ jobs:
       - name: build
         run:     
           docker build -f Dockerfile -t kotovak/app:$GITHUB_SHA .
+      - name: Push
+        run:        
+          docker push kotovak/app:$GITHUB_SHA
