@@ -25,6 +25,7 @@ jobs:
       - name: build
         run:     
           docker build -f Dockerfile -t kotovak/app:$GITHUB_SHA .
+          echo $GITHUB_SHA
          
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
