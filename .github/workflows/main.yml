@@ -25,9 +25,6 @@ jobs:
       - name: build
         run:     
           docker build -f Dockerfile -t kotovak/app:$GITHUB_SHA .
-          
-      - name: Print GITHUB_SHA
-        run: echo "$GITHUB_SHA"  
          
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
@@ -39,4 +36,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: kotovak/app:latest
+          tags: kotovak/app:${{GITHUB_SHA}}
