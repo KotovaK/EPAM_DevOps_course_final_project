@@ -33,7 +33,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       
       - name: Push to Docker Hub
-        uses: docker/build-push-action@v2
-        with:
-          push: true
-          tags: kotovak/app:${{GITHUB_SHA}}
+        run:     
+          ddocker push kotovak/app:$GITHUB_SHA
+        
+          
