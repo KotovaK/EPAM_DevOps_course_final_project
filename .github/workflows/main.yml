@@ -35,5 +35,13 @@ jobs:
       - name: Push to Docker Hub
         run:     
           docker push kotovak/app:$GITHUB_SHA
-        
-          
+      
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME_AWS }}
+          key: ${{ secrets.KEY_AWS}}
+          port: ${{ secrets.PORT_AWS }}
+          script: whoami
+     
