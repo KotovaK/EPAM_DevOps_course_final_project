@@ -34,6 +34,6 @@ jobs:
       
       - name: Push to Docker Hub
         run:     
-          ddocker push kotovak/app:$GITHUB_SHA
+          docker push kotovak/app:$GITHUB_SHA
         
           
