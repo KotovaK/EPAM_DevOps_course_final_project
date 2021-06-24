@@ -44,4 +44,4 @@ jobs:
           key: ${{ secrets.KEY_AWS}}
           port: ${{ secrets.PORT_AWS }}
           script: 
-            docker rm -f app && docker run -p 80:5000 -d --name app kotovak/app:latest
+            docker rm -f app && docker run -p 80:5000 -d --name app kotovak/app:$GITHUB_SHA
