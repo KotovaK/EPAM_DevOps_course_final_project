@@ -47,5 +47,5 @@ jobs:
           envs: GITHUB_SHA
           script: |
             export GITHUB_SHA=$POSTGRES_DB 
-            docker rm -f app
+            docker rm -f app || true
             docker run -p 80:5000 -d --name app kotovak/app:$GIT_COMMIT
