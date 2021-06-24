@@ -43,4 +43,4 @@ jobs:
           username: ${{ secrets.USERNAME_AWS }}
           key: ${{ secrets.KEY_AWS}}
           port: ${{ secrets.PORT_AWS }}
-          script: uname -a
+          script: docker rm -f app
