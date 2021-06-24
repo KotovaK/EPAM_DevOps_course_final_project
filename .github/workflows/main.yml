@@ -44,6 +44,7 @@ jobs:
           username: ${{ secrets.USERNAME_AWS }}
           key: ${{ secrets.KEY_AWS}}
           port: ${{ secrets.PORT_AWS }}
+          envs: GITHUB_SHA
           script: |
             docker rm -f app
             docker run -p 80:5000 -d --name app kotovak/app:$GITHUB_SHA
