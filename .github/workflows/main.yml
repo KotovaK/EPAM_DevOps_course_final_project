@@ -46,6 +46,6 @@ jobs:
           port: ${{ secrets.PORT_AWS }}
           envs: GITHUB_SHA
           script: |
-            export GITHUB_SHA=$POSTGRES_DB 
+            export GITHUB_SHA=$GIT_COMMIT 
             docker rm -f app || true
             docker run -p 80:5000 -d --name app kotovak/app:$GIT_COMMIT
