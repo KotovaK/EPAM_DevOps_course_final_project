@@ -14,7 +14,7 @@ jobs:
       
       - name: Check GITHUB_REF
         run: |
-          echo $GITHUB_REFF
+          echo $GITHUB_REF
           exit 1
           
       - name: Set up Python
