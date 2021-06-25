@@ -1,8 +1,9 @@
 name: Test
 on:
-  push:  
+  push:   
     branches: [ master ]
-  
+    tags: 
+      - 'v*.*.*'  
   workflow_dispatch: 
 
 jobs:  
