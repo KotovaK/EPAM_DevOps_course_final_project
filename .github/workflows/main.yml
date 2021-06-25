@@ -11,6 +11,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      
+      - name: Check GITHUB_REFF
+        run: |
+          echo $GITHUB_REFF
+          exit 1
+          
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
