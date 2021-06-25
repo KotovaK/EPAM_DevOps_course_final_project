@@ -10,13 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      
-      - name: Check GITHUB_REF
-        run: |
-          echo $GITHUB_REF
-          exit 1
-          
+      - uses: actions/checkout@v2          
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
@@ -30,7 +24,7 @@ jobs:
       
       - name: build
         run:     
-          docker build -f Dockerfile -t kotovak/app:$GITHUB_SHA .
+          docker build -f Dockerfile -t kotovak/app:$GITHUB_REF .
          
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
@@ -40,7 +34,7 @@ jobs:
       
       - name: Push to Docker Hub
         run:     
-          docker push kotovak/app:$GITHUB_SHA
+          docker push kotovak/app:$GITHUB_REF
       
       - name: executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@master
@@ -53,4 +47,4 @@ jobs:
           envs: GITHUB_SHA
           script: |
             docker rm -f app
-            docker run -p 80:5000 -d --name app kotovak/app:$GITHUB_SHA
+            docker run -p 80:5000 -d --name app kotovak/app:$GITHUB_REF
