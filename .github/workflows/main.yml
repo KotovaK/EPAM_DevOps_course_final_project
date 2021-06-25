@@ -16,7 +16,6 @@ jobs:
       - name: Test
         run: |
           echo $RELEASE_VERSION
-          echo ${{ env.RELEASE_VERSION }}
           exit 1
       - uses: actions/checkout@v2          
       - name: Set up Python
