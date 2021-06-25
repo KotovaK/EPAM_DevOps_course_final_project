@@ -17,7 +17,12 @@ jobs:
           python-version: '3.x'
       - name: Install dependencies
         run:
-          pip install -r requirements.txt     
+          pip install -r requirements.txt  
+        
+      - name: CIRCLE_TAG
+        run:
+          echo $CIRCLE_TAG
+          exit 1
       - name: run pytest
         run:
           pytest -v
