@@ -10,6 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v1
+      - name: Set env
+        run: echo ::set-env name=RELEASE_VERSION::${GITHUB_REF:10}
+      - name: Test
+        run: |
+          echo $RELEASE_VERSION
+          echo ${{ env.RELEASE_VERSION }}
+          exit 1
       - uses: actions/checkout@v2          
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -18,11 +26,7 @@ jobs:
       - name: Install dependencies
         run:
           pip install -r requirements.txt  
-        
-      - name: CIRCLE_TAG
-        run:
-          echo $CIRCLE_TAG
-          exit 1
+       
       - name: run pytest
         run:
           pytest -v
