@@ -42,7 +42,7 @@ jobs:
       
       - name: Push to Docker Hub
         run:     
-          docker push kotovak/app:$GITHUB_REF
+          docker push kotovak/app:$RELEASE_VERSION
       
       - name: executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@master
