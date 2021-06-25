@@ -1,7 +1,6 @@
 name: Test
 on:
-  push:   
-    branches: [ master ]
+  push:    
     tags: 
       - 'v*.*.*'  
   workflow_dispatch: 
