@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - name: Check GITHUB_REFF
+      - name: Check GITHUB_REF
         run: |
           echo $GITHUB_REFF
           exit 1
